@@ -27,12 +27,11 @@ pipeline{
 
    stage("Push updated deployment to git"){
             steps{
-                sh """
-                    sh """
+                 sh """
                     git config --global user.name "vikram"
                     git config --global user.email "vikram@gmail.com"
                     git add deployment.yml
-                    git commit -m 'Updated the deployment file' """
+                    git commit -m 'Updated the deployment file' 
                    """
                 withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]){
                     sh "git push https://github.com/abhigyanbasu/gitops_e2e_deployment.git master "
