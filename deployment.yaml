@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: complete-devops-pipeline
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: complete-devops-app
